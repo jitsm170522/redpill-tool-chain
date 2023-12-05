@@ -63,8 +63,8 @@ jobs:
 
 #           - platform: dva3221
 #             version: 7.0.1-42218
-          - platform: dva3221
-            version: 7.1.0-42661
+          #- platform: dva3221
+          #  version: 7.1.0-42661
 
     steps:
       - name: 检出项目文件
@@ -111,7 +111,7 @@ jobs:
           cat ${{matrix.platform}}_user_config.json
 
       - name: 添加扩展驱动
-        if: matrix.platform != 'dva3221'
+        #if: matrix.platform != 'dva3221'
         run: |
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-boot-wait.json
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-acpid.json
